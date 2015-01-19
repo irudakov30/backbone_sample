@@ -9,7 +9,6 @@ define("view/order/OrderView",
 
             render: function() {
                 this.$el.html(this.template);
-                this.$el.find('.modal').modal();
                 return this;
             }
 

@@ -14,7 +14,7 @@ function(ApplicationRoute,
             sideBarView.render();
 
 			ApplicationRoute.create();
-			Backbone.history.start();						
+			Backbone.history.start();
         }
     });
 
