@@ -8,7 +8,7 @@ define("model/Item",
 			},
 
 		   initialize: function() {
-			   this.set("price", Math.random());
+			   this.set("price", Math.round(Math.random()  * (50 - 1) + 1));
 		   }
 	   });
 
