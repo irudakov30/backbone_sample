@@ -3,6 +3,6 @@ require(["Application"],
 function(Application) {
 
     $(function() {
-        Application.create();   		
+        Application.create();
     });
 });
