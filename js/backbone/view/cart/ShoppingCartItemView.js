@@ -1,11 +1,22 @@
 define("view/cart/ShoppingCartItemView",
-    ["text!view/cart/ShoppingCartItemView.html"],
+    ["model/ShoppingCart",
+     "text!view/cart/ShoppingCartItemView.html"],
 
-    function(ShoppingCartItemViewHtml) {
+    function(ShoppingCart,
+             ShoppingCartItemViewHtml) {
 
         var ShoppingCartItemView = Backbone.View.extend({
             template: ShoppingCartItemViewHtml,
             tagName: "tr",
+
+            events: {
+                "click .cartRemoveButton": "cartRemove"
+            },
+
+            cartRemove: function() {
+                ShoppingCart.get("items").remove(this.model);
+                this.remove();
+            },
 
             render: function() {
                 var output = Mustache.render(this.template, this.model.toJSON());
