@@ -9,7 +9,10 @@ function(GridItemsView) {
 		},
 		
 		search: function() {
-			GridItemsView.create();
+			var gridItemsView = GridItemsView.create({
+				el: $("#RightSide")
+			});
+			gridItemsView.render();
 		},
 		
 		viewItem: function() {

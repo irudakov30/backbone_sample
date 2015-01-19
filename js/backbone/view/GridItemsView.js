@@ -1,14 +1,24 @@
 define("view/GridItemsView", 
-["model/ItemCollection"], 
+		["model/ItemCollection",
+			"view/ItemCollectionView"],
 
-function(ItemCollection) {
+function(ItemCollection, ItemCollectionView) {
 	var GridItemsView = Backbone.View.extend({
 	
-		initialize: function() {
+		render: function() {
 			var itemCollection = ItemCollection.create();
+
+			var itemCollectionView = ItemCollectionView.create({
+				el: this.el,
+				collection: itemCollection
+			});
+
+			itemCollectionView.render();
+
 			itemCollection.fetch();
+			return this;
 		}
-		
+
 	});
 	
 	return {
@@ -16,4 +26,4 @@ function(ItemCollection) {
 			return new GridItemsView(options);
 		}
 	}
-})
+});
