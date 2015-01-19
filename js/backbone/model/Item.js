@@ -4,10 +4,12 @@ define("model/Item",
 	   
 	   var Item = Backbone.Model.extend({
 	   		defaults: {
-				price: function() {
-					return Math.random();
-				}
-			}
+				price: 0
+			},
+
+		   initialize: function() {
+			   this.set("price", Math.random());
+		   }
 	   });
 
 	   return {
@@ -17,4 +19,4 @@ define("model/Item",
 			
 			class: Item
 	   }
-})
+});
