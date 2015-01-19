@@ -1,11 +1,22 @@
 define("routes/ApplicationRoute", 
-       ["view/GridItemsView"],
+       ["view/GridItemsView",
+		"view/cart/CartView"],
 	   
-function(GridItemsView) {
+function(GridItemsView,
+		 CartView) {
+
 	var ApplicationRoute = Backbone.Router.extend({
 		routes: {
 			"search": "search",
-			"item/*id": "viewItem"
+			"item/*id": "viewItem",
+			"cart": "cart"
+		},
+
+		cart: function() {
+			var cartView = CartView.create({
+				el: $("#RightSide")
+			});
+			cartView.render();
 		},
 		
 		search: function() {
