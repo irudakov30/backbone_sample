@@ -1,10 +1,18 @@
 define("Application",
-       ["routes/ApplicationRoute"],
+       ["routes/ApplicationRoute",
+           "view/SideBarView"],
 
-function(ApplicationRoute) {
+function(ApplicationRoute,
+         SideBarView) {
 
     var Application = Backbone.View.extend({        
         initialize: function() {
+            var sideBarView = SideBarView.create({
+                el: $("#SideBarView")
+            });
+
+            sideBarView.render();
+
 			ApplicationRoute.create();
 			Backbone.history.start();						
         }
