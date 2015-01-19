@@ -19,8 +19,6 @@ define("view/cart/ShoppingCartItemCollectionView",
             },
 
             addAll: function(items) {
-                this.$el.empty();
-
                 var size = items.length;
                 for(var i= 0; i < size; i++) {
                     this.addOne(items.at(i));
