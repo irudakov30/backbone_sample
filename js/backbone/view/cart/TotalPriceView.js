@@ -9,6 +9,10 @@ define("view/cart/TotalPriceView",
 
             template: TotalPriceViewHtml,
 
+            initialize: function() {
+                ShoppingCart.get("items").bind("remove", this.render, this);
+            },
+
             render: function() {
                 var output = Mustache.render(this.template, ShoppingCart.toJSON());
                 this.$el.html(output);
