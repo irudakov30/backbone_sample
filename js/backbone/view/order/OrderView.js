@@ -1,7 +1,9 @@
 define("view/order/OrderView",
-    ["text!view/order/OrderView.html"],
+    ["view/order/OrderFormView",
+     "text!view/order/OrderView.html"],
 
-    function(OrderViewHtml) {
+    function(OrderFormView,
+             OrderViewHtml) {
 
         var OrderView = Backbone.View.extend({
 
@@ -9,6 +11,11 @@ define("view/order/OrderView",
 
             render: function() {
                 this.$el.html(this.template);
+                var orderFormView = OrderFormView.create({
+                    el: this.$el.find(".OrderFormView")
+                });
+
+                orderFormView.render();
                 return this;
             }
 

@@ -17,7 +17,7 @@ function(GridItemsView,
 
 		order: function() {
 			var orderView = OrderView.create({
-				el: $("#OrderView")
+				el: $("#RightSide")
 			});
 			orderView.render();
 		},

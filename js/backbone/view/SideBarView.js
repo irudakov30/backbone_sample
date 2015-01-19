@@ -10,6 +10,7 @@ define("view/SideBarView",
             initialize: function() {
                 ShoppingCart.get("items").bind("add", this.render, this);
                 ShoppingCart.get("items").bind("remove", this.render, this);
+                ShoppingCart.get("items").bind("reset", this.render, this);
             },
 
             render: function() {
