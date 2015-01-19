@@ -1,5 +1,5 @@
 define("routes/ApplicationRoute", 
-       ["view/GridItemsView",
+       ["view/search/GridItemsView",
 		"view/cart/CartView"],
 	   
 function(GridItemsView,

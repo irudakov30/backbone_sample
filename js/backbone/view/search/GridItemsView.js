@@ -1,8 +1,9 @@
-define("view/GridItemsView", 
+define("view/search/GridItemsView",
 		["model/ItemCollection",
-			"view/ItemCollectionView"],
+		"view/ItemCollectionView"],
 
-function(ItemCollection, ItemCollectionView) {
+function(ItemCollection,
+		 ItemCollectionView) {
 	var GridItemsView = Backbone.View.extend({
 	
 		render: function() {
