@@ -9,7 +9,7 @@ define("view/ItemView",
             tagName: "tr",
 
             events: {
-                ".cartAddButton click": "cartAdd"
+                "click .cartAddButton": "cartAdd"
             },
 
             cartAdd: function() {
