@@ -1,5 +1,5 @@
 define("routes/ApplicationRoute", 
-       ["view/GridItemsView"], 
+       ["view/GridItemsView"],
 	   
 function(GridItemsView) {
 	var ApplicationRoute = Backbone.Router.extend({
