@@ -5,7 +5,7 @@ function(GridItemsView) {
 	var ApplicationRoute = Backbone.Router.extend({
 		routes: {
 			"search": "search",
-			"item/:id": "viewItem"
+			"item/*id": "viewItem"
 		},
 		
 		search: function() {
@@ -15,8 +15,8 @@ function(GridItemsView) {
 			gridItemsView.render();
 		},
 		
-		viewItem: function() {
-			alert("viewItem");
+		viewItem: function(itemId) {
+			alert(itemId);
 		}
 	});
 	
